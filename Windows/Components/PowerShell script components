@@ -1,0 +1,26 @@
+things to put in Windows script:
+
+- change all passwords to a secure password
+- harden regestry
+- create new users and add them to groups
+- show all hidden files
+-put all files on computer into one folder that is on desktop(encluding shares)
+- set up firewall- make it secure
+- close all not neccesary ports
+- remove not wanted users
+- disable not needed accounts (guest, etc.)
+- update?????
+- set password policy
+- set lockout policy
+- turn off blot: tiles, autoplay.
+-enable screen saver
+- set up windows defender/run scan
+- list all users and groups on computer
+
+
+
+
+updates
+list all users passwords
+update all users passwords (can be same)- something complex
+
