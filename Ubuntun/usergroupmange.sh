@@ -30,7 +30,39 @@ list_users() {
 create_group() {
     read -p "Enter the group name: " groupname
     sudo groupadd $groupname
-    echo "User $groupname created successfully."
+    echo "Group $groupname created successfully."
+}
+
+# Will delete groups
+
+remove_group() {
+    read -p "Enter the group name for what you want to delete: " groupdelname
+    sudo groupdel -R $groupdelname
+    echo "Group removed"
+}
+
+# Will list groups
+
+list_group() {
+    echo "List of all user accounts on the system:"
+    echo "----------------------------------------"
+    echo "GROUPNAME    GROUPID    USERS"
+    echo "----------------------------------------"
+    awk -F: '{printf "%-12s%-11s%s\n", $1, $3, $4}' /etc/group
+}
+
+add_user_group() {
+    read -p "Enter username: " usergroupadd
+    read -p "Enter groupname: " groupuseradd
+    sudo usermod -aG $usergroupadd $groupuseradd
+    echo "Moved $usergroupadd to $groupuseradd"
+}
+
+remove_user_group() {
+    read -p "Enter username: " usergroupdel
+    read -p "Enter groupname: " groupuserdel
+    sudo deluser $usergroupdel $groupuserdel
+    echo "Removed $usergroupdel from $groupuserdel"
 }
 
 # Main menu
@@ -44,8 +76,7 @@ while true; do
     echo "6. List all groups"
     echo "7. Add a user to a group"
     echo "8. Remove a user from a group"
-    echo "9. Change all passwords to a secure password"
-    echo "10. Exit"
+    echo "9. Exit"
     read -p "Enter your choice: " choice
     case $choice in
     1) create_user ;;
@@ -56,8 +87,7 @@ while true; do
     6) list_group ;;
     7) add_user_group ;;
     8) remove_user_group ;;
-    9) change_all_password ;;
-    10) exit ;;
+    9) exit ;;
     *) echo "Invalid choice. Please try again." ;;
     esac
 done

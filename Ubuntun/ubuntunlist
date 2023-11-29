@@ -1,23 +1,31 @@
 program for accountmangement
+
 	create users
 	delete users
 	list users
 	make groups
 	delete groups
-	list groups and users
-	replace all user passwords with Cyb3rPatr!0t$
+	list groups and users in group
 	
 program for deleting bad programs
+
 	delete apache2
+	etc
 	
 program for configering files
+
 	sysctl.conf config
 	lightdm config
 	sshd_config config
 	logins.def config
 	
-program for virus and malware scanners/ firewall
+program for virus and malware scanners (usefull in later rounds)
+
 	clamtk
 	etc
 	
-	uwf
+program for updating ubuntun/firewall setup
+
+	run update commands
+	setup automatic updates
+	ufw firewall
