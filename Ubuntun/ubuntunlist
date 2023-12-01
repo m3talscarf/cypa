@@ -6,26 +6,24 @@ program for accountmangement
 	make groups
 	delete groups
 	list groups and users in group
+	set all passwords
 	
 program for deleting bad programs
 
 	delete apache2
 	etc
 	
-program for configering files
-
-	sysctl.conf config
-	lightdm config
-	sshd_config config
-	logins.def config
-	
 program for virus and malware scanners (usefull in later rounds)
 
 	clamtk
 	etc
 	
-program for updating ubuntun/firewall setup
+program for updating ubuntun/firewall setup/configsetup
 
 	run update commands
 	setup automatic updates
 	ufw firewall
+	sysctl.conf config
+	lightdm config
+	sshd_config config
+	logins.def config
