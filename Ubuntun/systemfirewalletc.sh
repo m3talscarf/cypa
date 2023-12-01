@@ -16,12 +16,21 @@ sudo apt-get dist-upgrade
 
 sudo chmod 640 /etc/shadow
 
+# Lock Root Account
+
+sudo passwd -l root
+
 # Autoupdates Setup
 
 sudo apt-get install unattended-upgrades
-#need config code here
-sudo systemctl enable unattended-upgrades
-sudo systemctl start unattended-upgrades
+sudo dpkg-reconfigure -plow unattended-upgrades
+
+
+# Changes all user passwords
+
+awk -F: '$3 >= 1000 && $3 < 65534 { print $1 }' /etc/passwd > ./passchg.txt
+sed -i 's/$/:CyberSecure123!/' ./passchg.txt
+sudo chpasswd < ./passchg.txt
 
 # Config edits
 
