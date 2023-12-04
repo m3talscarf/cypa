@@ -58,7 +58,7 @@ sudo sed -i '$ a\SYSLOG_SU_ENAB YES' /etc/login.defs
 sudo sed -i '$ a\SYSLOG_SG_ENAB YES' /etc/login.defs
 sudo sed -i '$ a\PASS_MAX_DAYS 90' /etc/login.defs
 sudo sed -i '$ a\PASS_MIN_DAYS 10' /etc/login.defs
-sudo sed -i '$ a\PASS_WARN_DAYS 7' /etc/login.defs
+sudo sed -i '$ a\PASS_WARN_AGE 7' /etc/login.defs
 sudo cat /etc/login.defs
 
 #lightdm.conf.d
