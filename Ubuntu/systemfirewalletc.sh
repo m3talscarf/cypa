@@ -30,7 +30,10 @@ sudo dpkg-reconfigure -plow unattended-upgrades
 
 awk -F: '$3 >= 1000 && $3 < 65534 { print $1 }' /etc/passwd > ./passchg.txt
 sed -i 's/$/:CyberSecure123!/' ./passchg.txt
-sudo chpasswd < ./passchg.txt
+cat passchg.txt | while read line
+do
+chpasswd
+done
 
 # Config edits
 
