@@ -80,3 +80,14 @@ sudo sed -i '$ a\X11Fowarding no' /etc/ssh/sshd_config
 sudo sed -i '$ a\UsePAM yes' /etc/ssh/sshd_config
 sudo sed -i '$ a\UsePrivilegeSeparation yes' /etc/ssh/sshd_config
 sudo cat /etc/ssh/sshd_config
+
+#pam.d
+
+sudo sed -i '$ a\password required pam_unix.so remember=5' /etc/pam.d/common-password
+sudo sed -i '$ a\password requisite pam_pwquality.so' /etc/pam.d/common-password
+sudo cat /etc/pam.d/common-password
+
+#sudoers
+
+sudo sed -i '/Defaults !authenticate/Defaults authenticate' /etc/sudoers
+sudo cat /etc/sudoers
